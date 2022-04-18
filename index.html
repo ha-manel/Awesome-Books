@@ -26,6 +26,17 @@
   </form>
 
   <script src="script.js"></script>
+  <script>
+    function removeBook(element) {
+      booksArray = JSON.parse(storage.getItem('books'));
+      booksArray.splice(booksArray.findIndex((x) => x.author === element.previousSibling.innerText
+        && x.title === element.previousSibling.previousSibling.innerText), 1);
+      storage.setItem('books', JSON.stringify(booksArray));
+      booksDiv.innerHTML = '';
+
+      displayBooks();
+    }
+  </script>
 </body>
 
 </html>

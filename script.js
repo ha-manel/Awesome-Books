@@ -24,16 +24,6 @@ function displayBooks() {
 
 displayBooks();
 
-function removeBook(element) {
-  booksArray = JSON.parse(storage.getItem('books'));
-  booksArray.splice(booksArray.findIndex((x) => x.author === element.previousSibling.innerText
-    && x.title === element.previousSibling.previousSibling.innerText), 1);
-  storage.setItem('books', JSON.stringify(booksArray));
-  booksDiv.innerHTML = '';
-
-  displayBooks();
-}
-
 addBook.addEventListener('click', (e) => {
   e.preventDefault();
   const newBook = new Book(titleInput.value, authorInput.value);
