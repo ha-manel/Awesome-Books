@@ -11,20 +11,33 @@ const authorInput = document.querySelector('#author');
 const addBook = document.querySelector('#add-book');
 
 function displayBooks() {
-  let retrievedBooks = JSON.parse(storage.getItem('books'));
+  const retrievedBooks = JSON.parse(storage.getItem('books'));
   if (retrievedBooks) {
     retrievedBooks.forEach((book) => {
-      const bookContainer = document.createElement('div');
-      bookContainer.className = 'book-container';
-      bookContainer.innerHTML = `<p>${book.title}</p><p>${book.author}</p><button id="remove-book" onclick="removeBook(this)">Remove</button><hr>`;
-      booksDiv.appendChild(bookContainer);
+      createBookDiv(book);
     });
   }
 }
 
-
 displayBooks();
 
+function removeBook(element) {
+  booksArray = JSON.parse(storage.getItem('books'));
+  booksArray.splice(booksArray.findIndex((a) => a.title === element.previousSibling.innerText
+    && a.author === element.previousSibling.previousSibling.innerText), 1);
+  storage.setItem('books', JSON.stringify(booksArray));
+  booksDiv.innerHTML = '';
+  displayBooks();
+}
+
+function createBookDiv(book) {
+  const bookContainer = document.createElement('div');
+  bookContainer.className = 'book-container';
+  bookContainer.innerHTML = `<p>${book.title}</p><p>${book.author}</p>`;
+  const removeBtn = document.createElement('button');
+  removeBtn.onclick = removeBook(this);
+  booksDiv.appendChild(bookContainer);
+}
 
 addBook.addEventListener('click', (e) => {
   e.preventDefault();
@@ -35,8 +48,7 @@ addBook.addEventListener('click', (e) => {
   }
   booksArray.push(newBook);
   storage.setItem('books', JSON.stringify(booksArray));
-  const bookContainer = document.createElement('div');
-  bookContainer.className = 'book-container';
-  bookContainer.innerHTML = `<p>${newBook.title}</p><p>${newBook.author}</p><button id="remove-book" onclick="removeBook(this)">Remove</button><hr>`;
-  booksDiv.appendChild(bookContainer);
+  createBookDiv(newBook);
+  titleInput.value = '';
+  authorInput.value = '';
 });
