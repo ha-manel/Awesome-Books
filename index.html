@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Awesome Books</title>
+</head>
+
+<body>
+  <h1>Awesome Books</h1>
+  <div class="books">
+    <div id="hidden-div">
+      <p></p>
+      <p></p>
+      <button class="remove-btn" onclick="removeBook(this)">Remove</button>
+    </div>
+  </div>
+
+  <form>
+    <input type="text" id="title" placeholder="Title" required>
+    <input type="text" id="author" placeholder="Author" required>
+    <button id="add-book">Add</button>
+  </form>
+
+  <script src="script.js"></script>
+  <script>
+    function removeBook(element) {
+      booksArray = JSON.parse(storage.getItem('books'));
+      booksArray.splice(booksArray.findIndex((x) => x.author === element.previousSibling.innerText
+        && x.title === element.previousSibling.previousSibling.innerText), 1);
+      storage.setItem('books', JSON.stringify(booksArray));
+      booksDiv.innerHTML = '';
+
+      displayBooks();
+    }
+  </script>
+</body>
+
+</html>
