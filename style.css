@@ -11,3 +11,7 @@ input,
   padding: 8px;
   font-size: 12px;
 }
+
+#hidden-btn {
+  display: none;
+}
