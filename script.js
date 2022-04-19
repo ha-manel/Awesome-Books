@@ -4,7 +4,6 @@ const booksArray = JSON.parse(storage.getItem('books')) || [];
 function Book(title, author) {
   this.title = title;
   this.author = author;
-  this.id = booksArray.length;
 }
 
 const booksDiv = document.querySelector('.books');
