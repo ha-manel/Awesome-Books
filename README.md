@@ -20,7 +20,7 @@ Build a books library using:
 - Linters (Lighthouse, Webhint, Stylelint, Eslint)
 
 ## Live Demo
-
+Check out the **live demo** [here.](https://ha-manel.github.io/Microverse-Awesome-Books/)
 
 
 ## Getting Started
