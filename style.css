@@ -1,13 +1,36 @@
-form {
-  margin-top: 20px;
-  width: 20%;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap');
+
+body {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
 }
 
-input,
-#add-book {
-  padding: 8px;
-  font-size: 12px;
+h1 {
+  font-size: 35px;
+}
+
+.books {
+  width: 65%;
+  border: 3px solid #000;
+}
+
+.book-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  background-color: #dddddd;
+  padding: 0 20px;
+}
+
+.book-container:nth-child(2n) {
+  background-color: white;
+}
+
+.book-info {
+  display: flex;
+  gap: 8px;
+  font-size: 18px;
 }
