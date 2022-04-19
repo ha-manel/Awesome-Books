@@ -65,6 +65,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Hat tip to code reviewers and to everyone who reviewed the project and made suggestions.
+- Thank you [Taheny Belguith](https://github.com/TahenyBELGUITH) for your help and the improvement suggestions.
 
 ## 📝 License
 
