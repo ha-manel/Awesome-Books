@@ -1,11 +1,24 @@
-const storage = window.localStorage;
-const booksArray = JSON.parse(storage.getItem('books')) || [];
+class BookCollection {
+  constructor() {
+    this.booksArray = JSON.parse(localStorage.getItem('books')) || [];
+  }
 
-function Book(title, author) {
-  this.title = title;
-  this.author = author;
+  addBook(title, author) {
+    const book = {
+      title: title,
+      author: author,
+    };
+    this.booksArray.push(book);
+    localStorage.setItem('books', JSON.stringify(this.booksArray));
+  }
+
+  removeBook(index) {
+    this.booksArray.splice(index, 1);
+    localStorage.setItem('books', JSON.stringify(this.booksArray));
+  }
 }
 
+const booksCollection = new BookCollection();
 const booksDiv = document.querySelector('.books');
 const titleInput = document.querySelector('#title');
 const authorInput = document.querySelector('#author');
