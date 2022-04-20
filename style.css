@@ -1,19 +1,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap');
 
 body {
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
+  margin: 0;
+  overflow-x: hidden;
 }
 
-h1 {
+header {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 160px;
+  box-sizing: border-box;
+  border: 3px solid #000;
+}
+
+#logo {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#nav-links {
+  display: flex;
+  list-style-type: none;
+  font-size: 16px;
+  gap: 40px;
+}
+
+#nav-links li {
+  cursor: pointer;
+}
+
+.date-time {
+  position: absolute;
+  top: 80px;
+  right: 50px;
+  font-size: 16px;
+}
+
+h2 {
   font-size: 35px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.books-list {
+  display: none;
+  width: 65%;
+  margin-bottom: 100px;
 }
 
 .books {
-  width: 65%;
+  width: 100%;
   border: 3px solid #000;
 }
 
@@ -48,20 +94,14 @@ button {
   padding: 5px 10px;
 }
 
-hr {
-  width: 20%;
-  border: 1px solid #000;
-  margin-top: 30px;
-}
-
-h2 {
-  font-size: 30px;
+.add-new-book {
+  display: none;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  width: 340px;
+  width: 400px;
   gap: 15px;
 }
 
@@ -75,4 +115,41 @@ input {
   width: 53px;
   box-sizing: border-box;
   align-self: flex-end;
+}
+
+#form-validation {
+  opacity: 0;
+  padding: 8px 15px;
+  color: white;
+  border-radius: 8px;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 400;
+  transition: opacity 0.2s ease-in-out;
+}
+
+#form-validation.active {
+  opacity: 1;
+  background-color: #008000;
+}
+
+.contact-info {
+  display: none;
+  margin-bottom: 100px;
+  font-size: 18px;
+}
+
+footer {
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  font-size: 16px;
+  border: 3px solid #000;
+  background-color: white;
+  text-align: center;
+}
+
+.display-section {
+  display: block;
+  margin-top: 60px;
 }
