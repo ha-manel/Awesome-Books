@@ -18,6 +18,7 @@ class BookCollection {
     };
     this.booksArray.push(book);
     localStorage.setItem('books', JSON.stringify(this.booksArray));
+    this.displayBooks();
   }
 
   removeBook(index) {
@@ -42,7 +43,6 @@ addBook.addEventListener('click', (e) => {
   e.preventDefault();
   if (titleInput.value && authorInput.value) {
     booksCollection.addBook(titleInput.value, authorInput.value);
-    booksCollection.displayBooks();
 
     titleInput.value = '';
     authorInput.value = '';
