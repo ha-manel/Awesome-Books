@@ -96,7 +96,7 @@ button {
 form {
   display: flex;
   flex-direction: column;
-  width: 340px;
+  width: 400px;
   gap: 15px;
 }
 
@@ -130,4 +130,5 @@ footer {
 
 .display-section {
   display: block;
+  margin-top: 60px;
 }
