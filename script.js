@@ -94,3 +94,20 @@ function getDate() {
 }
 
 setInterval(getDate, 1000);
+
+// Mobile navbar
+const hamburgerMenu = document.querySelector('.hamburger');
+const navBar = document.querySelector('nav');
+const navLinks = document.querySelectorAll('#nav-links li');
+
+hamburgerMenu.addEventListener('click', () => {
+  hamburgerMenu.classList.toggle('active');
+  navBar.classList.toggle('active');
+});
+
+navLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    hamburgerMenu.classList.remove('active');
+    navBar.classList.remove('active');
+  });
+});
