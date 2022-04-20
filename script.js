@@ -48,3 +48,46 @@ addBook.addEventListener('click', (e) => {
     authorInput.value = '';
   }
 });
+
+// Website Navigation
+const navList = document.querySelector('#nav-list');
+const navAddNew = document.querySelector('#nav-add-new');
+const navContact = document.querySelector('#nav-contact');
+
+const bookListSection = document.querySelector('.books-list');
+const addNewSection = document.querySelector('.add-new-book');
+const contactSection = document.querySelector('.contact-info');
+
+navList.addEventListener('click', () => {
+  bookListSection.classList.add('display-section');
+  addNewSection.classList.remove('display-section');
+  contactSection.classList.remove('display-section');
+});
+
+navAddNew.addEventListener('click', () => {
+  bookListSection.classList.remove('display-section');
+  addNewSection.classList.add('display-section');
+  contactSection.classList.remove('display-section');
+});
+
+navContact.addEventListener('click', () => {
+  bookListSection.classList.remove('display-section');
+  addNewSection.classList.remove('display-section');
+  contactSection.classList.add('display-section');
+});
+
+// Show date and time
+const dateTime = document.querySelector('#date-text');
+
+function getDate() {
+  const currentdate = new Date();
+  const datetime = currentdate.getDate() + "/"
+    + (currentdate.getMonth() + 1) + "/"
+    + currentdate.getFullYear() + ", "
+    + currentdate.getHours() + ":"
+    + currentdate.getMinutes() + ":"
+    + currentdate.getSeconds();
+    dateTime.innerHTML = datetime;
+}
+
+setInterval(getDate, 1000); 
