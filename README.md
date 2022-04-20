@@ -4,6 +4,7 @@
 
 > This is a Microverse (@microverseinc) project which aims at creating a books library in which we can add/remove books, and view the available books.
 
+![image](https://user-images.githubusercontent.com/50721479/164257872-561cb6b7-5ac1-4db3-a26a-d0643534a347.png)
 
 ## Requirements
 
