@@ -32,6 +32,7 @@ const booksCollection = new BookCollection();
 const titleInput = document.querySelector('#title');
 const authorInput = document.querySelector('#author');
 const addBook = document.querySelector('#add-book');
+const validationMessage = document.querySelector('#form-validation');
 
 booksCollection.displayBooks();
 
@@ -39,11 +40,18 @@ function remove(index) { //eslint-disable-line
   booksCollection.removeBook(index);
 }
 
+function clearValidationMessage() {
+  validationMessage.innerHTML = '';
+  validationMessage.classList.remove('active');
+}
+
 addBook.addEventListener('click', (e) => {
   e.preventDefault();
   if (titleInput.value && authorInput.value) {
     booksCollection.addBook(titleInput.value, authorInput.value);
-
+    validationMessage.innerHTML = 'Your book has been added successfully';
+    validationMessage.classList.add('active');
+    setTimeout(clearValidationMessage, 2000);
     titleInput.value = '';
     authorInput.value = '';
   }
@@ -81,13 +89,8 @@ const dateTime = document.querySelector('#date-text');
 
 function getDate() {
   const currentdate = new Date();
-  const datetime = currentdate.getDate() + "/"
-    + (currentdate.getMonth() + 1) + "/"
-    + currentdate.getFullYear() + ", "
-    + currentdate.getHours() + ":"
-    + currentdate.getMinutes() + ":"
-    + currentdate.getSeconds();
-    dateTime.innerHTML = datetime;
+  const datetime = `${currentdate.getDate()}/${currentdate.getMonth() + 1}/${currentdate.getFullYear()}, ${currentdate.getHours()}:${currentdate.getMinutes()}:${currentdate.getSeconds()}`;
+  dateTime.innerHTML = datetime;
 }
 
-setInterval(getDate, 1000); 
+setInterval(getDate, 1000);
