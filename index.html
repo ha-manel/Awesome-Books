@@ -10,20 +10,48 @@
 </head>
 
 <body>
-  <h1>All Awesome Books</h1>
+  <header>
+    <p id="logo">Awesome Books</p>
+    <nav>
+      <ul id="nav-links">
+        <li id="nav-list">List</li>
+        <li id="nav-add-new">Add new</li>
+        <li id="nav-contact">Contact</li>
+      </ul>
+    </nav>
+  </header>
 
-  <div class="books">
-
+  <div class="date-time">
+    <p id="date-text">monday, 25th 2022 | 9:06:55</p>
   </div>
 
-  <hr>
+  <section class="books-list">
+    <h2>All Awesome Books</h2>
+    <div class="books"></div>
+  </section>
 
-  <h2>Add a new book</h2>
-  <form>
-    <input type="text" id="title" placeholder="Title">
-    <input type="text" id="author" placeholder="Author">
-    <button id="add-book">Add</button>
-  </form>
+  <section class="add-new-book">
+    <h2>Add a new book</h2>
+    <form>
+      <input type="text" id="title" placeholder="Title">
+      <input type="text" id="author" placeholder="Author">
+      <button id="add-book">Add</button>
+    </form>
+  </section>
+
+  <section class="contact-info">
+    <h2>Contact Information</h2>
+    <p>Do you have any questions or you just want to say "Hello"? <br> You can reach out to us!</p>
+    <ul>
+      <li>Our e-mail: mail@mail.com</li>
+      <li>Our phone number: 00123456789</li>
+      <li>Our address: Streetname 22, 123456 City, Country</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>All copyrights are reserved.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
