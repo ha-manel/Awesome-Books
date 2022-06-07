@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Microverse-Awesome-Books
+# Awesome Books
 
-> This is a Microverse (@microverseinc) project which aims at creating a books library in which we can add/remove books, and view the available books.
+> A books library in which we can add/remove books, and view the available books.
 
 ![image](https://user-images.githubusercontent.com/50721479/164257872-561cb6b7-5ac1-4db3-a26a-d0643534a347.png)
 
@@ -21,7 +21,7 @@ Build a books library using:
 - Linters (Lighthouse, Webhint, Stylelint, Eslint)
 
 ## Live Demo
-Check out the **live demo** [here.](https://ha-manel.github.io/Microverse-Awesome-Books/)
+Check out the **live demo** [here.](https://ha-manel.github.io/Awesome-Books/)
 
 
 ## Getting Started
